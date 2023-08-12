@@ -1,7 +1,7 @@
 const ethers = require('ethers');
 const provider = new ethers.providers.JsonRpcProvider(process.env.ETHEREUM_RPC_URL);
 
-const paymentChannelFactoryABI = [...]; // ABI for PaymentChannelFactory contract
+const paymentChannelFactoryABI = require("../PaymentChannelFactoryABI.json")
 
 exports.createChannel = async (senderPrivateKey, receiverAddress, duration) => {
     const wallet = new ethers.Wallet(senderPrivateKey, provider);
